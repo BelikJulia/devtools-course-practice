@@ -26,9 +26,9 @@ TEST(Belik_Julia_ComplexNumberTest, Conjugate_Numbers_Multiplication) {
 TEST(Belik_Julia_ComplexNumberTest, Test_Equal) {
     // Arrange
     double re1 = 5;
-    double im1 = 7;
+    double im1 = 8;
     double re2 = 5;
-    double im2 = 7;
+    double im2 = 8;
     ComplexNumber a(re1, im1);
     ComplexNumber b(re2, im2);
 
