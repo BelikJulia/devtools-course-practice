@@ -6,13 +6,13 @@
 
 TEST(Belik_Julia_ComplexNumberTest, Can_SetGet_Im) {
     // Arrange
-    ComplexNumber z;
+    ComplexNumber a;
 
     // Act
-    z.setIm(15);
+    a.setIm(42);
 
     // Assert
-    EXPECT_EQ(15, z.getIm());
+    EXPECT_EQ(42, a.getIm());
 }
 TEST(Belik_Julia_ComplexNumberTest, Conjugate_Numbers_Multiplication) {
     // Arrange
