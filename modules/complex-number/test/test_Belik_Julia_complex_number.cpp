@@ -28,7 +28,8 @@ TEST(Belik_Julia_ComplexNumberTest, Conjugate_Numbers_Multiplication) {
     EXPECT_EQ(c.getRe(), 26);
     EXPECT_EQ(c.getIm(), 0);
 }
-typedef testing::TestWithParam<std::tuple<double, double>> Belik_Julia_ComplexNumberTest_Param;
+typedef testing::TestWithParam<std::tuple<double, double>>
+Belik_Julia_ComplexNumberTest_Param;
 TEST_P(Belik_Julia_ComplexNumberTest_Param, Test_Equal) {
     // Arrange
     double re = std::get<0>(GetParam());
@@ -42,7 +43,8 @@ TEST_P(Belik_Julia_ComplexNumberTest_Param, Test_Equal) {
     // Assert
     EXPECT_TRUE(c);
 }
-INSTANTIATE_TEST_CASE_P(/**/, Belik_Julia_ComplexNumberTest_Param, testing::Combine(
+INSTANTIATE_TEST_CASE_P(/**/, Belik_Julia_ComplexNumberTest_Param,
+    testing::Combine(
     testing::Values(-17.0, 2.0),
     testing::Values(8.0, -4.0)
 ));
