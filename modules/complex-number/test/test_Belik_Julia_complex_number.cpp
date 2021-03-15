@@ -16,17 +16,19 @@ TEST(Belik_Julia_ComplexNumberTest, Can_Copy) {
     // Assert
     EXPECT_TRUE(c);
 }
-TEST(Belik_Julia_ComplexNumberTest, Conjugate_Numbers_Multiplication) {
+TEST(Belik_Julia_ComplexNumberTest, Test_Division_Zero_Im) {
     // Arrange
-    ComplexNumber a(5, 1);
-    ComplexNumber b(5, -1);
+    ComplexNumber a(15.0, 18.0);
+    ComplexNumber b(3.0, 0.0);
+    double re = 5.0;
+    double im = 6.0;
 
     // Act
-    ComplexNumber c = a * b;
+    ComplexNumber c = a / b;
 
     // Assert
-    EXPECT_EQ(c.getRe(), 26);
-    EXPECT_EQ(c.getIm(), 0);
+    EXPECT_EQ(re, c.getRe());
+    EXPECT_EQ(im, c.getIm());
 }
 typedef testing::TestWithParam<std::tuple<double, double>>
 Belik_Julia_ComplexNumberTest_Param;
