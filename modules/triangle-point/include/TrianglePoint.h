@@ -7,7 +7,8 @@
 
 class Triangle {
 public:
-    Triangle(std::pair<double, double>  _a, std::pair<double, double> _b, std::pair<double, double> _c);
+    Triangle(std::pair<double, double>  _a, std::pair<double, double> _b,
+        std::pair<double, double> _c);
 
     bool isInside(std::pair<double, double>  x);
 
