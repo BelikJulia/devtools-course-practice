@@ -20,7 +20,7 @@ TEST(TrianglePoint, Point_In) {
     bool tmp;
     Triangle tr(a, b, c);
     tmp = tr.isInside(x);
-    ASSERT_EQ(tmp, true);
+    ASSERT_EQ(true, tmp);
 }
 
 TEST(TrianglePoint, Point_Out) {
@@ -31,7 +31,7 @@ TEST(TrianglePoint, Point_Out) {
     bool tmp;
     Triangle tr(a, b, c);
     tmp = tr.isInside(x);
-    ASSERT_EQ(tmp, false);
+    ASSERT_EQ(false, tmp);
 }
 
 TEST(TrianglePoint, Point_On_Side) {
@@ -42,7 +42,7 @@ TEST(TrianglePoint, Point_On_Side) {
     bool tmp;
     Triangle tr(a, b, c);
     tmp = tr.isInside(x);
-    ASSERT_EQ(tmp, false);
+    ASSERT_EQ(false, tmp);
 }
 
 TEST(TrianglePoint, Test_Line) {
@@ -53,5 +53,5 @@ TEST(TrianglePoint, Test_Line) {
     bool tmp;
     Triangle tr(a, b, c);
     tmp = tr.isInside(x);
-    ASSERT_EQ(tmp, false);
+    ASSERT_EQ(false, tmp);
 }

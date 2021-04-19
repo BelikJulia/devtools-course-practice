@@ -2,14 +2,11 @@
 
 #include <cmath>
 #include <utility>
+
 #include "include/TrianglePoint.h"
 
 Triangle::Triangle(std::pair<double, double>  _a, std::pair<double, double> _b,
-    std::pair<double, double> _c) {
-    a = _a;
-    b = _b;
-    c = _c;
-}
+    std::pair<double, double> _c) : a(_a), b(_b), c(_c) {}
 
 bool Triangle::isInside(std::pair<double, double>  x) {
     double t1, t2, t3;
