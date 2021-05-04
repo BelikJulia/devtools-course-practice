@@ -10,7 +10,7 @@ using std::vector;
 using ::testing::internal::RE;
 
 class DepositCalc_app_test : public ::testing::Test {
-protected:
+ protected:
     void Act(vector<string> args_) {
         vector<const char*> options;
         options.push_back("appname");
@@ -21,11 +21,12 @@ protected:
         int argc = static_cast<int>(args_.size()) + 1;
         output_ = app_(argc, argv);
     }
+
     void Assert(std::string expected) {
         EXPECT_TRUE(RE::PartialMatch(output_, RE(expected)));
     }
 
-private:
+ private:
     DepositCalc_app app_;
     string output_;
 };
