@@ -33,8 +33,7 @@ bool DepositCalc_app::validateNumberOfArguments(int argc, const char** argv) {
     if (argc == 1) {
         help(argv[0]);
         return false;
-    }
-    else if (argc != 8) {
+    } else if (argc != 8) {
         help(argv[0], "Error: Should be 8 arguments.\n\n");
         return false;
     }
