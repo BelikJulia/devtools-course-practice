@@ -7,11 +7,12 @@
 #include <vector>
 
 class DepositCalc_app {
-public:
+ public:
     DepositCalc_app();
+
     std::string operator()(int argc, const char** argv);
 
-private:
+ private:
     void help(const char* appname, const char* message = "");
     bool validateNumberOfArguments(int argc, const char** argv);
     bool validateArguments(const char** argv, std::vector<int> daysInMonths);
