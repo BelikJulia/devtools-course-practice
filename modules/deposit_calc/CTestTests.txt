@@ -57,11 +57,41 @@ set_tests_properties (${prefix}_can_Months_Is_Negative PROPERTIES
 #############################################
 
 add_test(
+    NAME ${prefix}_can_Incorrect_Date
+    COMMAND ${APPLICATION} 1 30 2 1 1 1 0
+)
+set_tests_properties (${prefix}_can_Incorrect_Date PROPERTIES
+    PASS_REGULAR_EXPRESSION "Error: Incorrect date"
+    LABELS "${MODULE}")
+
+#############################################
+
+add_test(
+    NAME ${prefix}_can_Interest_Rate
+    COMMAND ${APPLICATION} 1 1 1 1 -1 1 0
+)
+set_tests_properties (${prefix}_can_Interest_Rate PROPERTIES
+    PASS_REGULAR_EXPRESSION "Error: Interest rate must be positive"
+    LABELS "${MODULE}")
+
+#############################################
+
+add_test(
     NAME ${prefix}_can_Capitalization
     COMMAND ${APPLICATION} 1 1 1 1 1 1 9
 )
 set_tests_properties (${prefix}_can_Capitalization PROPERTIES
     PASS_REGULAR_EXPRESSION "Error: Wrong value"
+    LABELS "${MODULE}")
+
+#############################################
+
+add_test(
+    NAME ${prefix}_can_Wrong_Num
+    COMMAND ${APPLICATION} 1 1 1 1 1! 1 0
+)
+set_tests_properties (${prefix}_can_Wrong_Num PROPERTIES
+    PASS_REGULAR_EXPRESSION "Error: Wrong number format"
     LABELS "${MODULE}")
 
 #############################################

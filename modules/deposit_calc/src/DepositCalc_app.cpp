@@ -40,6 +40,17 @@ bool DepositCalc_app::validateNumberOfArguments(int argc, const char** argv) {
     return true;
 }
 
+double parseDouble(const char* arg) {
+    char* end;
+    double value = strtod(arg, &end);
+
+    if (end[0]) {
+        throw std::string("Error: Wrong number format.\n\n");
+    }
+
+    return value;
+}
+
 bool DepositCalc_app::validateArguments(const char** argv,
     std::vector<int> daysInMonths) {
     if (std::stoi(argv[1]) < 0) {
@@ -54,7 +65,7 @@ bool DepositCalc_app::validateArguments(const char** argv,
         help(argv[0], "Error: Number of days must be positive.\n\n");
         return false;
     }
-    if (std::stoi(argv[5]) < 0) {
+    if (argv[5][0] == '-') {
         help(argv[0], "Error: Interest rate must be positive.\n\n");
         return false;
     }
@@ -84,14 +95,14 @@ std::string DepositCalc_app::operator()(int argc, const char** argv) {
     try {
         args.depositSum = stoi(argv[1]);
         args.numberOfMonths = stoi(argv[6]);
-        args.interestRate = stoi(argv[5]);
+        args.interestRate = parseDouble(argv[5]);
         args.day = stoi(argv[2]);
         args.month = stoi(argv[3]);
         args.year = stoi(argv[4]);
         args.capitalization = stoi(argv[7]);
     }
-    catch (...) {
-        throw("Invalid arguments");
+    catch (std::string& str) {
+        return str;
     }
     depc.setDepositSum(args.depositSum);
     depc.setDate(args.day, args.month, args.year);
