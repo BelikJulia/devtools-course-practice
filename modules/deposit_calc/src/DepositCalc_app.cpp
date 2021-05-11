@@ -93,13 +93,13 @@ std::string DepositCalc_app::operator()(int argc, const char** argv) {
         return message_;
     }
     try {
-        args.depositSum = stoi(argv[1]);
-        args.numberOfMonths = stoi(argv[6]);
+        args.depositSum = parseDouble(argv[1]);
+        args.numberOfMonths = parseDouble(argv[6]);
         args.interestRate = parseDouble(argv[5]);
-        args.day = stoi(argv[2]);
-        args.month = stoi(argv[3]);
-        args.year = stoi(argv[4]);
-        args.capitalization = stoi(argv[7]);
+        args.day = parseDouble(argv[2]);
+        args.month = parseDouble(argv[3]);
+        args.year = parseDouble(argv[4]);
+        args.capitalization = parseDouble(argv[7]);
     }
     catch (std::string& str) {
         return str;
