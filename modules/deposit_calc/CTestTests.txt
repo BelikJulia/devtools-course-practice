@@ -57,6 +57,16 @@ set_tests_properties (${prefix}_can_Months_Is_Negative PROPERTIES
 #############################################
 
 add_test(
+    NAME ${prefix}_can_Days_Is_Negative
+    COMMAND ${APPLICATION} 1 -1 1 1 1 1 0
+)
+set_tests_properties (${prefix}_can_Days_Is_Negative PROPERTIES
+    PASS_REGULAR_EXPRESSION "Error: Number of days must be positive"
+    LABELS "${MODULE}")
+
+#############################################
+
+add_test(
     NAME ${prefix}_can_Incorrect_Date
     COMMAND ${APPLICATION} 1 30 2 1 1 1 0
 )
